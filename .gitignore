@@ -1,0 +1,49 @@
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Node.js (if using)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+.env
+
+# Python/Flask (if using)
+__pycache__/
+*.py[cod]
+*.egg-info/
+instance/
+.env
+.env.*
+venv/
+
+# ASP.NET/Visual Studio (if using)
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Compiled assets
+*.class
+*.dll
+*.exe
+*.pdb
+
+# Uploads/Temporary
+uploads/
+tmp/
+*.bak
