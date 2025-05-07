@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileInput = document.getElementById('photo-upload');
     const previewImage = document.getElementById('preview-image');
 
+
     const paletteData = {
         Winter: {
             description: "Winters have cool undertones with high contrast between their skin, hair, and eyes. Your best colors are clear, vivid, and cool-toned like icy blues, deep purples, and true reds.",
@@ -49,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
     
         if (fileInput.files.length > 0) {
             const formData = new FormData();
             const imageFile = fileInput.files[0];
             formData.append("image", imageFile);
-    
+
             fetch("/analyze", {
                 method: "POST",
                 body: formData
@@ -111,11 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                 }
-                // Tampilkan hasil
-                uploadSection.classList.add('hidden');
+                // tampilkan hasil
                 resultsSection.classList.remove('hidden');
             })
             .catch(error => {
+                uploadSection.classList.remove('hidden');
                 console.error("Error analyzing image:", error);
                 alert("There was an error analyzing your photo.");
             });

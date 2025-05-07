@@ -46,7 +46,7 @@ async def home(request: Request):
 @app.post("/analyze", response_class=HTMLResponse)
 async def analyze_image(image: UploadFile = File(...)):
     # Simpan file sementara
-    temp_path = f"temp_{image.filename}"
+    temp_path = f"tmp/temp_{image.filename}"
     with open(temp_path, "wb") as buffer:
         shutil.copyfileobj(image.file, buffer)
 
